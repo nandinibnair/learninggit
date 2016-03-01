@@ -16,6 +16,7 @@ class UserTest extends TestCase
     public function testExample()
     {
         $this->visit('/')
+
              ->click('Users Module')
              ->see('Welcome to users module')
              ->seePageIs('admin/users');
@@ -31,9 +32,7 @@ class UserTest extends TestCase
     {
         //Given //When //Then
         factory(User::class ,5)->create();
-
         $user = User::latest();
-
         $this->assertCount(4,$user);
 
     }
